@@ -22,4 +22,8 @@ public class Bullet : MonoBehaviour
         transform.position = start;
         transform.forward = target - start;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("hit "+other.name);
+    }
 }
