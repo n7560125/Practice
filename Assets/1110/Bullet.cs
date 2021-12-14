@@ -24,6 +24,16 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hit "+other.name);
+        Debug.Log("hit " + other.name);
+        if (other.gameObject.tag == "Enemy")
+        {
+
+        }
+        else
+        {
+
+        }
+        gameObject.SetActive(false);
+
     }
 }
