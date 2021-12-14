@@ -233,7 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef1cf74d314a334ab0e5dd9779f01da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fMoveMul: 0
+  fMoveMul: 1
+  fControllerSensitivity: 1
 --- !u!1 &889458709
 GameObject:
   m_ObjectHideFlags: 0

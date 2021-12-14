@@ -37,9 +37,9 @@ public class practice : MonoBehaviour
   
         //mControllObject.transform.position += vMove;
         float fMh = Input.GetAxis("Mouse X");
-
         float fMv = Input.GetAxis("Mouse Y");
         Debug.Log(fMh + ";;;" + fMv);
+
     }
     //private void OnCollisionEnter(Collision collision)
     //{

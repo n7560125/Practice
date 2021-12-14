@@ -5,6 +5,7 @@ using UnityEngine;
 public class FPScontroller : MonoBehaviour
 {
     public float fMoveMul;
+    public float fControllerSensitivity;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +15,10 @@ public class FPScontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float fMX = Input.GetAxis("Mouse X");
-        float fMY = Input.GetAxis("Mouse Y");
+        float fMX = Input.GetAxis("Mouse X")*fControllerSensitivity;
+        float fMY = Input.GetAxis("Mouse Y")*fControllerSensitivity;
         transform.Rotate(0.0f, fMX, 0.0f);
-        Camera.main.transform.Rotate(fMY, 0.0f, 0.0f);
+        Camera.main.transform.Rotate(-fMY, 0.0f, 0.0f);
 
         float fH = Input.GetAxis("Horizontal");
         float fV = Input.GetAxis("Vertical");
