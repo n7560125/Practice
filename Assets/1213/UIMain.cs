@@ -12,6 +12,10 @@ public class UIMain : MonoBehaviour
 
     public GameObject m_PlayerObject;
     public Texture2D m_CursorImage;
+    public Slider m_AudioOption;
+
+    public Dropdown m_Dp;
+    public List<Sprite> m_DpSp;
 
     // Start is called before the first frame update
     private void Awake()
@@ -20,7 +24,41 @@ public class UIMain : MonoBehaviour
     }
     void Start()
     {
+        m_AudioOption.value = AudioListener.volume;
         
+    }
+    public void AddInputToCombo(InputField InF)
+    {
+        Dropdown.OptionData pData = new Dropdown.OptionData();
+        pData.text = InF.text;
+        pData.image = m_DpSp[2];
+        m_Dp.options.Add(pData);
+    }
+    public void ServerSelected(Dropdown dp)
+    {
+        int iSelectID = dp.value;
+        Debug.Log(dp.options[iSelectID].text);
+    }
+    public void InitServerCombobox()
+    {
+        List<Dropdown.OptionData> pList = new List<Dropdown.OptionData>();
+        
+        Dropdown.OptionData pData = new Dropdown.OptionData();
+        pData.text = "Server 1";
+        pData.image = m_DpSp[0];
+        pList.Add(pData);
+
+        pData = new Dropdown.OptionData();
+        pData.text = "Server 2";
+        pData.image = m_DpSp[1];
+        pList.Add(pData);
+
+        pData = new Dropdown.OptionData();
+        pData.text = "Server 3";
+        pData.image = m_DpSp[2];
+        pList.Add(pData);
+
+        m_Dp.options = pList;
     }
     public void UpdateHpBar(float fValue)
     {
@@ -31,6 +69,10 @@ public class UIMain : MonoBehaviour
     void Update()
     {
         
+    }
+    public void SetAudioVolume(Slider s)
+    {
+        AudioListener.volume = s.value;
     }
     public void OnMouseEnterImage()
     {
@@ -53,6 +95,5 @@ public class UIMain : MonoBehaviour
         Debug.Log(b.name + ": click");
         //call object method with a value;
         m_PlayerObject.SendMessage("Hit", 10.0f);
-       // m_PlayerObject.Hit()
     }
 }
