@@ -50,7 +50,7 @@ public class UIMain : MonoBehaviour
         //m_AudioOption.value = AudioListener.volume;
         InitServerCombobox();
 
-        SpawnFloatingBar(m_PlayerObject.transform, 1.0f);
+        SpawnFloatingBar(m_PlayerObject.transform, 20.0f);
     }
 
     void SpawnFloatingText(Transform t, float fH, int iNumber)
@@ -62,17 +62,29 @@ public class UIMain : MonoBehaviour
         ft.SpawnAt(Camera.main, iNumber.ToString(), vStart, 3.0f);
         go.transform.SetParent(this.transform);
     }
-
+    /// <summary>
+    /// Spawn Floating Bar(import:Gameobject.transform, Height);
+    /// </summary>
+    /// <param name="t"></param>
+    /// <param name="fH"></param>
     void SpawnFloatingBar(Transform t, float fH)
     {
         Debug.Log("SpawnFloatingBar");
+        //Spawn floating bar;
         GameObject go = Instantiate(m_FloatingBarPrefab) as GameObject;
+        //Get spawned floating bar's script component;
         FloatingBar fb = go.GetComponent<FloatingBar>();
+        //Call func to setup spawned floating bar's variable;
         fb.SetupFollowTarget(t, Camera.main, fH);
+        //Add to list;
         m_FloatingBarsList.Add(fb);
+        //Set canvas to go's parent;
         go.transform.SetParent(this.transform);
     }
-
+    /// <summary>
+    /// Destory Floating bar;
+    /// </summary>
+    /// <param name="target"></param>
     void DestoryFloatingBar(Transform target)
     {
         int iLen = m_FloatingBarsList.Count;

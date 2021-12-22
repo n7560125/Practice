@@ -31,22 +31,24 @@ public class FloatingBar : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        //debug:target = null;
         if(followTarget == null)
         {
             return;
         }
-      
-        Vector3 vWPos = followTarget.position + Vector3.up* mHeight;
-      //  Debug.Log(mHeight);
+        //make Bar upon the Target with Height;
+        Vector3 vWPos = followTarget.position + Vector3.up * mHeight;
+        //make 3D position to screen point(base on camera), z axis means depth;
         Vector3 scPos = mCamera.WorldToScreenPoint(vWPos);
+        //if target too close to camera, unenable image;
         if(scPos.z < 0.01f)
         {
             mImage.enabled = false;
-        } else
+        } 
+        else
         {
             mImage.enabled = true;
         }
-       // Debug.Log(scPos);
         Canvas ca =  UIMain.Instance().GetCanvas();
         RectTransform rt = UIMain.Instance().GetRectTransform();
         RenderMode rm = ca.renderMode;
