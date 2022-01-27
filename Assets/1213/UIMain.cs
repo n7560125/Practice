@@ -8,7 +8,7 @@ public class UIMain : MonoBehaviour
     private static UIMain mInstance = null;
     public static UIMain Instance() { return mInstance; }
 
-    //  public Image m_HpBar;
+    public Image m_HpBar;
     public Object m_FloatingBarPrefab;
     public Object m_FloatingTextPrefab;
 
@@ -144,7 +144,7 @@ public class UIMain : MonoBehaviour
     public void UpdateHpBar(float fValue)
     {
         Debug.Log("UpdateHpBar " + fValue);
-       // m_HpBar.fillAmount = fValue;
+        m_HpBar.fillAmount = fValue;
     }
 
     // Update is called once per frame
@@ -184,7 +184,7 @@ public class UIMain : MonoBehaviour
     {
         Debug.Log(b.name + ": click");
         m_PlayerObject.SendMessage("Hit", 10.0f);
-       // m_PlayerObject.Hit()
+        //m_PlayerObject.Hit();
     }
 
     public void BeginDragItem(Image m)

@@ -3371,7 +3371,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
@@ -3499,7 +3499,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086442142}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 808fc3beabc7bd4438b26f7756050b65, type: 2}
   m_CullingMode: 0
@@ -5187,6 +5187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c090f275e5a8549bf01f0d5e604b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_HpBar: {fileID: 1555727659}
   m_FloatingBarPrefab: {fileID: 8752535912308499964, guid: dc3e310f64416f441a7d537c5260a9cc, type: 3}
   m_FloatingTextPrefab: {fileID: 2150572716800250588, guid: 8961f5e364d215d43b1306086c62b73c, type: 3}
   m_PlayerObject: {fileID: 1171387254}
@@ -5609,7 +5610,7 @@ GameObject:
   - component: {fileID: 1555727660}
   - component: {fileID: 1555727659}
   m_Layer: 5
-  m_Name: Image
+  m_Name: hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
